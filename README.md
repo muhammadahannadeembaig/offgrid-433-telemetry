@@ -5,6 +5,13 @@ Cellular-independent, long-range 433MHz handheld LoRa transceiver built around d
 ## Hardware Architecture & Upgrade Path
 Our initial bench prototype was validated using EBYTE **E32-433T30D-V8** (SX1278) modules. The RF stage is currently being upgraded to the SX1268-based **E22-400T33D-V2** (33dBm / 2W) paired with high-gain **TX433-BLG-40** fiberglass antennas to benchmark higher link budgets, improved receiver sensitivity, and Listen-Before-Talk (LBT) anti-interference performance.
 
+### Baseline Prototype Validation (E32-433T30D-V8)
+Before migrating to the ESP32-S3 and 2W `E22-400T33D-V2` architecture, baseline bench tests, buck-regulated power decoupling, and UART parameter configurations were validated on our existing `E32-433T30D` testbed:
+
+| Bench Testbed & Power Stage | E32-433T30D RF Module | EBYTE RF Setting Configuration |
+| :---: | :---: | :---: |
+| ![Bench Setup](bench-prototype-setup.jpg) | ![E32 Module](e32-module-closeup.jpg) | ![RF Setting](rf-setting-e32.jpg) |
+
 ## Bill of Materials (Target Build)
 * **Host MCU:** ESP32-S3 (Dual-Core Xtensa LX7 @ 240MHz)
 * **RF Transceiver:** EBYTE E22-400T33D-V2 (433MHz, 33dBm / 2W, Semtech SX1268)
